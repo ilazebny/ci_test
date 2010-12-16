@@ -41,4 +41,10 @@ public class AppTest
     	double result = App.sum(2);
     	assertEquals(4.0, result);
     }
+
+    public void testSumFailed ()
+    {
+    	double result = App.sum(2);
+    	assertEquals(5.0, result);
+    }
 }
