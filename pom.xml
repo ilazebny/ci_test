@@ -22,6 +22,44 @@
 
 	<build>
 		<plugins>
+<!--			<plugin>-->
+<!--				<groupId>org.codehaus.mojo</groupId>-->
+<!--				<artifactId>cobertura-maven-plugin</artifactId>-->
+<!--				<version>2.4</version>-->
+<!--				<configuration>-->
+<!--					<check>-->
+<!--						<branchRate>85</branchRate>-->
+<!--						<lineRate>85</lineRate>-->
+<!--						<haltOnFailure>false</haltOnFailure>-->
+<!--						<totalBranchRate>85</totalBranchRate>-->
+<!--						<totalLineRate>85</totalLineRate>-->
+<!--						<packageLineRate>85</packageLineRate>-->
+<!--						<packageBranchRate>85</packageBranchRate>-->
+<!--					</check>-->
+<!--				</configuration>-->
+<!--				<executions>-->
+<!--					<execution>-->
+<!--						<goals>-->
+<!--							<goal>clean</goal>-->
+<!--							<goal>check</goal>-->
+<!--						</goals>-->
+<!--					</execution>-->
+<!--				</executions>-->
+<!--			</plugin>-->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>emma-maven-plugin</artifactId>
+				<version>1.0-alpha-2</version>
+				<executions>
+					<execution>
+						<phase>process-classes</phase>
+						<goals>
+							<goal>emma</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-site-plugin</artifactId>
@@ -60,43 +98,29 @@
 								<configLocation>checkstyle-5-SOPware.xml</configLocation>
 							</configuration>
 						</plugin>
+						<plugin>
+							<groupId>org.codehaus.mojo</groupId>
+							<artifactId>emma-maven-plugin</artifactId>
+							<version>1.0-alpha-2</version>
+						</plugin>
+<!--						<plugin>-->
+<!--							<groupId>org.codehaus.mojo</groupId>-->
+<!--							<artifactId>cobertura-maven-plugin</artifactId>-->
+<!--							<version>2.4</version>-->
+<!--						</plugin>-->
 					</reportPlugins>
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
-<!-- 
-	<reporting>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-project-info-reports-plugin</artifactId>
-				<version>2.1.1</version>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-report-plugin</artifactId>
-				<version>2.7</version>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-pmd-plugin</artifactId>
-				<version>2.5</version>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-checkstyle-plugin</artifactId>
-				<version>2.6</version>
-				<configuration>
-					<configLocation>checkstyle-5-SOPware.xml</configLocation>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>2.7</version>
-			</plugin>
-		</plugins>
-	</reporting>
- -->
+	<!-- <reporting> <plugins> <plugin> <groupId>org.apache.maven.plugins</groupId> 
+		<artifactId>maven-project-info-reports-plugin</artifactId> <version>2.1.1</version> 
+		</plugin> <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-surefire-report-plugin</artifactId> 
+		<version>2.7</version> </plugin> <plugin> <groupId>org.apache.maven.plugins</groupId> 
+		<artifactId>maven-pmd-plugin</artifactId> <version>2.5</version> </plugin> 
+		<plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-checkstyle-plugin</artifactId> 
+		<version>2.6</version> <configuration> <configLocation>checkstyle-5-SOPware.xml</configLocation> 
+		</configuration> </plugin> <plugin> <groupId>org.apache.maven.plugins</groupId> 
+		<artifactId>maven-javadoc-plugin</artifactId> <version>2.7</version> </plugin> 
+		</plugins> </reporting> -->
 </project>
