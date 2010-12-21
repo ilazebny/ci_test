@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright (c) 2008 SOPERA GmbH
+    All rights reserved.
+    This program and the accompanying materials are made available
+    under the terms of the Eclipse Public License v1.0
+    which accompanies this distribution, and is available at
+    http://www.eclipse.org/legal/epl-v10.html
+ -->
+<!--
+	This configuration file was written by the eclipse-cs plugin configuration editor
+-->
+<!--
+Checkstyle-Configuration: SOPware Checks
+Description:
+Based on the Sun Checks (Eclipse) configuration included in the Checkstyle delivery.
+-->
+<!DOCTYPE module PUBLIC "-//Puppy Crawl//DTD Check Configuration 1.2//EN" "http://www.puppycrawl.com/dtds/configuration_1_2.dtd">
+<module name="Checker">
+    <property name="severity" value="warning"/>
+    <module name="TreeWalker">
+        <property name="tabWidth" value="4"/>
+        <module name="JavadocMethod">
+            <property name="scope" value="package"/>
+            <property name="allowMissingPropertyJavadoc" value="true"/>
+        </module>
+        <module name="JavadocType"/>
+        <module name="JavadocVariable">
+            <property name="scope" value="package"/>
+        </module>
+        <module name="JavadocStyle">
+            <property name="scope" value="package"/>
+            <property name="checkEmptyJavadoc" value="true"/>
+        </module>
+        <module name="ConstantName"/>
+        <module name="LocalFinalVariableName"/>
+        <module name="LocalVariableName"/>
+        <module name="MemberName"/>
+        <module name="MethodName"/>
+        <module name="PackageName">
+            <property name="format" value="^org.sopera.[a-z]+(\.[a-zA-Z_][a-zA-Z0-9_]*)*$"/>
+        </module>
+        <module name="ParameterName"/>
+        <module name="StaticVariableName"/>
+        <module name="TypeName"/>
+        <module name="AvoidStarImport"/>
+        <module name="IllegalImport"/>
+        <module name="UnusedImports">
+            <property name="severity" value="info"/>
+        </module>
+        <module name="EmptyForIteratorPad"/>
+        <module name="MethodParamPad"/>
+        <module name="NoWhitespaceAfter">
+            <property name="tokens" value="BNOT,DEC,DOT,INC,LNOT,UNARY_MINUS,UNARY_PLUS"/>
+        </module>
+        <module name="NoWhitespaceBefore"/>
+        <module name="OperatorWrap"/>
+        <module name="ParenPad"/>
+        <module name="TypecastParenPad"/>
+        <module name="WhitespaceAfter"/>
+        <module name="WhitespaceAround"/>
+        <module name="RedundantModifier"/>
+        <module name="AvoidNestedBlocks"/>
+        <module name="EmptyBlock"/>
+        <module name="LeftCurly"/>
+        <module name="NeedBraces"/>
+        <module name="RightCurly"/>
+        <module name="EqualsHashCode">
+            <property name="severity" value="info"/>
+        </module>
+        <module name="HiddenField">
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="Sun Code Conventions 6.3"/>
+            <property name="ignoreConstructorParameter" value="true"/>
+            <property name="ignoreSetter" value="true"/>
+            <property name="ignoreAbstractMethods" value="true"/>
+        </module>
+        <module name="InnerAssignment"/>
+        <module name="MagicNumber">
+            <property name="severity" value="info"/>
+        </module>
+        <module name="MissingSwitchDefault">
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="Sun Code Conventions 7.8"/>
+        </module>
+        <module name="SimplifyBooleanReturn">
+            <property name="severity" value="info"/>
+        </module>
+        <module name="HideUtilityClassConstructor">
+            <property name="severity" value="info"/>
+        </module>
+        <module name="LineLength">
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="Only non comment lines are checked"/>
+            <property name="severity" value="info"/>
+            <property name="ignorePattern" value="^\s*\*"/>
+            <property name="max" value="100"/>
+        </module>
+        <module name="DeclarationOrder">
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="Sun Code Conventions 3.1.3"/>
+        </module>
+        <module name="ParameterAssignment"/>
+        <module name="MultipleVariableDeclarations"/>
+        <module name="RedundantImport">
+            <property name="severity" value="info"/>
+        </module>
+        <module name="ImportOrder">
+            <property name="severity" value="info"/>
+        </module>
+        <module name="FallThrough">
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="Sun Code Conventions 7.8"/>
+        </module>
+        <module name="VisibilityModifier"/>
+        <module name="ParameterNumber">
+            <property name="severity" value="info"/>
+        </module>
+    </module>
+    <module name="FileTabCharacter">
+        <property name="severity" value="ignore"/>
+    </module>
+    <module name="RegexpHeader">
+        <metadata name="com.atlassw.tools.eclipse.checkstyle.comment"
+            value="Checks for compliance with the SOPERA copyright header"/>
+        <property name="header"
+            value="^/\*{79}\n \* Copyright \(c\) \d\d\d\d((, \d\d\d\d)|( - \d\d\d\d))? SOPERA GmbH\n \* All rights reserved.\n \* This program and the accompanying materials are made available\n \* under the terms of the Eclipse Public License v1.0\n \* which accompanies this distribution, and is available at\n \* http://www.eclipse.org/legal/epl-v10.html\n \*{78}/\n"/>
+    </module>
+    <module name="RegexpMultiline">
+        <metadata name="com.atlassw.tools.eclipse.checkstyle.comment"
+            value="The method System.exit() is a very drastic way to terminate an application"/>
+        <property name="severity" value="info"/>
+        <property name="format" value="System\s*\.\s*exit\s*\("/>
+        <property name="message" value="Avoid System.exit()"/>
+    </module>
+    <module name="RegexpMultiline">
+        <metadata name="com.atlassw.tools.eclipse.checkstyle.comment"
+            value="Avoid using System.out(err).print() for debugging purposes."/>
+        <property name="severity" value="info"/>
+        <property name="format" value="System\s*\.\s*(out)|(err)\s*\.\s*print(ln)?\s*\("/>
+        <property name="message" value="Make sure System.out(err).print() is not used for debugging purposes."/>
+    </module>
+    <module name="RegexpMultiline">
+        <metadata name="com.atlassw.tools.eclipse.checkstyle.comment"
+            value="Avoid using printStackTrace for debugging purposes."/>
+        <property name="severity" value="info"/>
+        <property name="format" value="\.\s*printStackTrace\s*\("/>
+        <property name="message" value="Make sure printStackTrace is not used for debugging purposes."/>
+    </module>
+</module>
