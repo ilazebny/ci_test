@@ -47,4 +47,11 @@ public class AppTest
     	double result = App.sum(3);
     	assertEquals(6.0, result);
     }
+
+    public void testDouble ()
+    {
+    	double result = App.my_double(4);
+    	assertEquals(8.0, result);
+    }
+
 }

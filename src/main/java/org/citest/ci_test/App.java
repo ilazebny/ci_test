@@ -20,4 +20,10 @@ public class App
     {
     	return arg + arg;
     }
+
+    public static double my_double (double arg)
+    {
+    	return arg * 2;
+    }
+
 }
